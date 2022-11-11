@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="First commit of empty Mini-Project file, 04-11-2022">
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +37,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "82",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/T00224562/Desktop/OOP-Mini-Project"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.RestaurantTillSystem">
     <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainFrame" />
       <module name="OOP Mini-Project" />
@@ -48,8 +50,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RestaurantTillSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem" />
+      <module name="OOP Mini-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RestaurantTillSystem" />
         <item itemvalue="Application.MainFrame" />
       </list>
     </recent_temporary>
@@ -64,7 +74,7 @@
       <updated>1667595776698</updated>
       <workItem from="1667595778332" duration="1265000" />
       <workItem from="1668157870899" duration="1199000" />
-      <workItem from="1668159896700" duration="2410000" />
+      <workItem from="1668159896700" duration="3951000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -80,7 +90,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668161396814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
+      <created>1668162336787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668162336787</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
+      <created>1668162355810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668162355810</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +123,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit of empty Mini-Project file, 04-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit of empty Mini-Project file, 04-11-2022" />
+    <MESSAGE value="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022" />
   </component>
 </project>

@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFrame extends JFrame{
+public class RestaurantTillSystem extends JFrame{
     private JTextField tfName;
     private JTextField tfPinCode;
     private JButton btnLogin;
@@ -10,9 +10,10 @@ public class MainFrame extends JFrame{
     private JLabel lbLogin;
     private JPanel loginPanel;
 
-    public MainFrame() {
+    public RestaurantTillSystem() {
         setContentPane(loginPanel);
         setTitle("TillLogin");
+        setLocationRelativeTo(null);
         setSize(900, 450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -34,6 +35,6 @@ public class MainFrame extends JFrame{
     }
 
     public static void main(String[] args) {
-        MainFrame LoginFrame = new MainFrame();
+        RestaurantTillSystem LoginFrame = new RestaurantTillSystem();
     }
 }
