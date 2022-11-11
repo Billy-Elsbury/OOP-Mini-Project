@@ -20,13 +20,21 @@ public class MainFrame extends JFrame{
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = tf
-            }
-        });
+                String loginName = tfName.getText();
+                String pinCode = tfPinCode.getText();
+                lbLogin.setText("Login " + loginName + " " + pinCode);
+            }});
+
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfName.setText("");
+                tfPinCode.setText("0000");
+            }});
     }
 
     public static void main(String[] args) {
-        MainFrame myframe = new MainFrame();
+        MainFrame LoginFrame = new MainFrame();
 
     }
 }
