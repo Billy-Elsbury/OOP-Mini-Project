@@ -37,5 +37,4 @@ public class RestaurantTillSystem extends JFrame{
     public static void main(String[] args) {
         RestaurantTillSystem LoginFrame = new RestaurantTillSystem();
     }
-
 }

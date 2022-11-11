@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem.java" afterDir="false" />
-    </list>
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +70,7 @@
       <updated>1667595776698</updated>
       <workItem from="1667595778332" duration="1265000" />
       <workItem from="1668157870899" duration="1199000" />
-      <workItem from="1668159896700" duration="3951000" />
+      <workItem from="1668159896700" duration="4601000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -104,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668162355810</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
+      <created>1668164363201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668164363201</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
+      <created>1668164443214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668164443214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
