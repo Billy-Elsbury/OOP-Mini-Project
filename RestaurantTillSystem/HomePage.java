@@ -20,7 +20,6 @@ public class HomePage extends JFrame{
         home.setVisible(true);
 
 
-
         //setIconImage(new ImageIcon(getClass().getResource("iconImage.png")).getImage());
 
     }
