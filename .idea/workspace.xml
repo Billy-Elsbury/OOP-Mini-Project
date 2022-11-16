@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="First commit of empty Mini-Project file, 04-11-2022">
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667595776698</updated>
       <workItem from="1667595778332" duration="1265000" />
-      <workItem from="1668606435922" duration="424000" />
+      <workItem from="1668606435922" duration="10711000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -61,7 +60,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667597201106</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022">
+      <created>1668606966162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668606966162</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022">
+      <created>1668607047597</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668607047597</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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">
+      <created>1668607122433</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668607122433</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit of empty Mini-Project file, 04-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit of empty Mini-Project file, 04-11-2022" />
+    <MESSAGE value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022" />
+    <MESSAGE value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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" />
+    <option name="LAST_COMMIT_MESSAGE" value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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" />
   </component>
 </project>
