@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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">
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added basic writing and reading of txt file to login page, 16-11-2022&#10;&#10;token: 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">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;123&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;246&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/billy/Desktop/Java-Labs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "123",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "246",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/billy/Desktop/Java-Labs"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667595776698</updated>
       <workItem from="1667595778332" duration="1265000" />
-      <workItem from="1668606435922" duration="10711000" />
+      <workItem from="1668606435922" duration="15383000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -81,7 +85,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668607122433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added basic writing and reading of txt file to login page, 16-11-2022&#10;&#10;token: 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">
+      <created>1668620365983</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668620365983</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added basic writing and reading of txt file to login page, 16-11-2022&#10;&#10;token: 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">
+      <created>1668620435634</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668620435634</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +120,7 @@
     <MESSAGE value="First commit of empty Mini-Project file, 04-11-2022" />
     <MESSAGE value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022" />
     <MESSAGE value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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" />
-    <option name="LAST_COMMIT_MESSAGE" value="Late commit from yesterday (15-11-2022)... Fixed login page issues and added functionality to make login button hide the login page and open the home page, next step: flesh out home page, add some validation?, 16-11-2022&#10;&#10;token: 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" />
+    <MESSAGE value="Added basic writing and reading of txt file to login page, 16-11-2022&#10;&#10;token: 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" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic writing and reading of txt file to login page, 16-11-2022&#10;&#10;token: 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" />
   </component>
 </project>
