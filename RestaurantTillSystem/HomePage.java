@@ -11,12 +11,12 @@ public class HomePage extends JFrame{
 
     public HomePage() {
         home = new JFrame("Home Frame");
+        home.setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
         home.setContentPane(homePanel);
         home.setTitle("Home Page");
         home.setLocationRelativeTo(null);
         home.setSize(900, 450);
         home.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        home.pack();
         home.setVisible(true);
 
 

@@ -29,22 +29,28 @@ public class LoginPage extends JFrame{
         login.setIconImage(new ImageIcon(this.getClass().getResource("loginIconImage.png")).getImage());
         login.setContentPane(loginPanel);
         login.setTitle("Till Login");
-        lbLogin.setText("Valid details = Name: BillyElsbury Pin: T00224562");
         login.setLocationRelativeTo(null);
         login.setSize(500, 500);
         login.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        login.setVisible(false);
+
+        String setLoginName = JOptionPane.showInputDialog("Please enter the name you wish to register as your login name",
+                "JohnBrosnan");
+        String setLoginPin = JOptionPane.showInputDialog("Please enter the pin you wish to register as your login name",
+                "T00224562");
+
+        lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
+
         login.setVisible(true);
 
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //retrieve login information from file
+                //retrieve login information from file (reference Lab Sheet 15)
                 File outFile = new File("loginDetails.txt");
 
                 try {
                     FileOutputStream outputStream = new FileOutputStream(outFile);
-
-                    String setLoginName = "BillyElsbury";
 
                     ObjectOutputStream objectOutStream = new
                             ObjectOutputStream(outputStream);
@@ -97,12 +103,17 @@ public class LoginPage extends JFrame{
                 lbInput.setText("You inputted = Name: " + loginName
                         + " Pin: " + pinCode);
 
-               if(loginName.equals("BillyElsbury")){
-                System.out.println("Amy is silly");
+               if(loginName.equals(setLoginName)){
+                System.out.println("Correct Login, Welcome");
                 }
+               else{
+                   System.out.println("Incorrect Login, Please re-enter correct login details");
+               }
 
-                HomePage homePage = new HomePage();
+                new HomePage();
                 //homePage.setVisible(true);
+                /*For some reason setting the homePage as visible creates
+                another blank GUI window*/
                 login.setVisible(false);
             }});
 
