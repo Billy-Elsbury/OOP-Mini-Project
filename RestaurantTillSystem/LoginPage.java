@@ -15,11 +15,11 @@ public class LoginPage extends JFrame{
 
 
     public LoginPage() {
-        login= new JFrame("Login Frame");
+        login = new JFrame("Login Frame");
         login.setContentPane(loginPanel);
         login.setTitle("Till Login");
         login.setLocationRelativeTo(null);
-        login.setSize(900, 450);
+        login.setSize(1500, 450);
         login.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         login.pack();
         login.setVisible(true);
@@ -32,8 +32,10 @@ public class LoginPage extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String loginName = tfName.getText();
                 String pinCode = tfPinCode.getText();
-                lbLogin.setText("Login: " + loginName + " " + pinCode);
-
+                lbLogin.setText("Welcome: " + loginName + " " + pinCode);
+                HomePage homePage = new HomePage();
+                homePage.setVisible(true);
+                login.setVisible(false);
             }});
 
         btnClear.addActionListener(new ActionListener() {

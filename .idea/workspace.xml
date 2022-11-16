@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="First commit of empty Mini-Project file, 04-11-2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/RestaurantTillDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/RestaurantTillDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +25,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2H6BhjnmGk9NDUN1JxIsrvXqfRw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,96 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "122",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "219",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/T00224562/IdeaProjects/OOP-Mini-Project/RestaurantTillSystem"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;123&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;246&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/billy/Desktop/Java-Labs&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\T00224562\IdeaProjects\OOP-Mini-Project\RestaurantTillSystem" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\T00224562\IdeaProjects\OOP-Mini-Project\RestaurantTillSystem" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="RestaurantTillSystem" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.HomePage">
-    <configuration name="HomePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.HomePage" />
-      <module name="OOP Mini-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RestaurantTillSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.LoginPage" />
-      <module name="OOP Mini-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RestaurantTillSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RestaurantApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="problemsolvingweek8.exercisea.RestaurantApp" />
-      <module name="OOP Mini-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="problemsolvingweek8.exercisea.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RestaurantTillDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.RestaurantTillDriver" />
-      <module name="OOP Mini-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="RestaurantTillSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.HomePage" />
-      <item itemvalue="Application.RestaurantApp" />
-      <item itemvalue="Application.RestaurantTillDriver" />
-      <item itemvalue="Application.LoginPage" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.HomePage" />
-        <item itemvalue="Application.RestaurantTillDriver" />
-        <item itemvalue="Application.LoginPage" />
-        <item itemvalue="Application.RestaurantApp" />
-      </list>
-    </recent_temporary>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -137,9 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667595776698</updated>
       <workItem from="1667595778332" duration="1265000" />
-      <workItem from="1668157870899" duration="1199000" />
-      <workItem from="1668159896700" duration="4601000" />
-      <workItem from="1668528218052" duration="6775000" />
+      <workItem from="1668606435922" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -148,42 +61,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667597201106</updated>
     </task>
-    <task id="LOCAL-00002" summary="First commit of empty Mini-Project file, 04-11-2022">
-      <created>1668161396814</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668161396814</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <created>1668162336787</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1668162336787</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <created>1668162355810</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1668162355810</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <created>1668164363201</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1668164363201</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022">
-      <created>1668164443214</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1668164443214</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +80,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit of empty Mini-Project file, 04-11-2022" />
-    <MESSAGE value="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic IntelliJ GUI designer to Mini-Project, 11-11-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit of empty Mini-Project file, 04-11-2022" />
   </component>
 </project>
