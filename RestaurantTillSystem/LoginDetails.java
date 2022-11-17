@@ -4,9 +4,13 @@ import java.io.*;
 
 public class LoginDetails implements Serializable {
     String loginName;
-    double pin;
+    int pin;
 
-    public LoginDetails(String loginName, double pin) {
+    public LoginDetails(){
+        this("User does not exist",000000);
+    }
+
+    public LoginDetails(String loginName, int pin) {
         setLoginName(loginName);
         setPin(pin);
     }
@@ -19,11 +23,11 @@ public class LoginDetails implements Serializable {
         this.loginName = loginName;
     }
 
-    public double getPin() {
+    public long getPin() {
         return pin;
     }
 
-    public void setPin(double pin) {
+    public void setPin(int pin) {
         this.pin = pin;
     }
 

@@ -1,13 +1,17 @@
 package RestaurantTillSystem;
 
         import javax.swing.*;
-        import java.awt.event.ActionEvent;
-        import java.awt.event.ActionListener;
 
 public class HomePage extends JFrame{
     JPanel homePanel;
+    JMenu MenuItems, Orders, Admin;
 
     public HomePage() {
+        //Menu bar parameters
+
+        //createMenuItemsMenu();
+
+
         setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
         setContentPane(homePanel);
         setTitle("Home Page");
@@ -15,14 +19,10 @@ public class HomePage extends JFrame{
         setSize(900, 450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-
-
-        //setIconImage(new ImageIcon(getClass().getResource("iconImage.png")).getImage());
-
     }
 
     public static void main(String[] args) {
-        HomePage HomeFrame = new HomePage();
+        new HomePage();
     }
 
     private void createUIComponents() {

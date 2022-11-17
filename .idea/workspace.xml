@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="CLeaned up code, the current JFrame is already explicit don't need: &quot;login.set&quot;, 17-11-2022&#10;&#10;token: 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">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/loginIconImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/loginIconImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +37,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;123&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;246&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/billy/Desktop/Java-Labs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "123",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "246",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/billy/Desktop/Java-Labs",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Application.LoginPage">
+}]]></component>
+  <component name="RunManager" selected="Application.HomePage">
     <configuration name="HomePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.HomePage" />
       <module name="OOP Mini-Project" />
@@ -86,9 +92,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginPage" />
-        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.HomePage" />
+        <item itemvalue="Application.RestaurantTillDriver" />
+        <item itemvalue="Application.LoginPage" />
       </list>
     </recent_temporary>
   </component>
@@ -103,6 +109,8 @@
       <workItem from="1667595778332" duration="1265000" />
       <workItem from="1668606435922" duration="18712000" />
       <workItem from="1668677557443" duration="5093000" />
+      <workItem from="1668702052204" duration="1869000" />
+      <workItem from="1668704787528" duration="10284000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>

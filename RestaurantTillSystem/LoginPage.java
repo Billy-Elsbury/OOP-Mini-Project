@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.ArrayList;
 
 public class LoginPage extends JFrame{
     JPanel loginPanel;
@@ -14,6 +15,7 @@ public class LoginPage extends JFrame{
     JLabel lbLogin;
     JButton btnExit;
     JLabel lbInput;
+    private JLabel Image;
 
     public LoginPage(){
 
@@ -46,16 +48,28 @@ public class LoginPage extends JFrame{
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //retrieve login information from file (reference Lab Sheet 15)
+                //make new file for login info(reference Lab Sheet 15)
                 File outFile = new File("loginDetails.txt");
 
                 try {
                     FileOutputStream outputStream = new FileOutputStream(outFile);
 
-                    ObjectOutputStream objectOutStream = new
-                            ObjectOutputStream(outputStream);
+                    LoginDetails login1 = new LoginDetails("BillyElsbury", 76146);
+                    LoginDetails login2 = new LoginDetails("JohnBrosnan",12345);
 
-                    objectOutStream.writeObject(setLoginName);
+                    ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
+
+                    objectOutStream.writeObject(login1);
+                    objectOutStream.writeObject(login2);
+
+                    ArrayList<Object> mixtureOfObjects = new ArrayList<>();
+
+                    mixtureOfObjects.add("Billy");
+                    mixtureOfObjects.add("Billy2");
+                    mixtureOfObjects.add("Billy3");
+                    mixtureOfObjects.add("Billy4");
+
+                    objectOutStream.writeObject(mixtureOfObjects);
 
                     outputStream.close();
 
@@ -76,7 +90,21 @@ public class LoginPage extends JFrame{
 
                     ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
 
-                    System.out.println(objectInStream.readObject());
+                    LoginDetails login1 = (LoginDetails) objectInStream.readObject();
+                    LoginDetails login2 = (LoginDetails) objectInStream.readObject();
+
+                    ArrayList<Object> mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
+
+                    String objectMixture = "";
+
+                    for (Object x : mixtureOfObjects)
+                        objectMixture += x + "\n";
+
+                    JOptionPane.showMessageDialog(null, "State of standalone objects " +
+                            "read from the file are:\n\n" + login1 + "\n" +
+                            login2 +
+                            "\n\nThe ones from the array-list are:\n\n" + objectMixture,
+                            "Output from File", JOptionPane.INFORMATION_MESSAGE);
 
                     inputStream.close();
 
@@ -131,7 +159,7 @@ public class LoginPage extends JFrame{
     }
 
     public static void main(String[] args) {
-        LoginPage LoginFrame = new LoginPage();
+        new LoginPage();
     }
 
     private void createUIComponents() {
