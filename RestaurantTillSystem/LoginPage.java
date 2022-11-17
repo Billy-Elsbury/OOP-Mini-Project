@@ -12,8 +12,8 @@ public class LoginPage extends JFrame{
     JButton btnLogin;
     JButton btnClear;
     JLabel lbLogin;
-    private JButton btnExit;
-    private JLabel lbInput;
+    JButton btnExit;
+    JLabel lbInput;
 
     public LoginPage(){
 
@@ -39,6 +39,9 @@ public class LoginPage extends JFrame{
         lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
 
         setVisible(true);
+
+        //LoginName name = new LoginName();
+        //call loginDetails class
 
         btnLogin.addActionListener(new ActionListener() {
             @Override
