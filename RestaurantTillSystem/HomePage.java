@@ -6,18 +6,15 @@ package RestaurantTillSystem;
 
 public class HomePage extends JFrame{
     JPanel homePanel;
-    JFrame home;
-
 
     public HomePage() {
-        home = new JFrame("Home Frame");
-        home.setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
-        home.setContentPane(homePanel);
-        home.setTitle("Home Page");
-        home.setLocationRelativeTo(null);
-        home.setSize(900, 450);
-        home.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        home.setVisible(true);
+        setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
+        setContentPane(homePanel);
+        setTitle("Home Page");
+        setLocationRelativeTo(null);
+        setSize(900, 450);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
 
 
         //setIconImage(new ImageIcon(getClass().getResource("iconImage.png")).getImage());

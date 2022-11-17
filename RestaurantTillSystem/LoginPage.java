@@ -14,25 +14,22 @@ public class LoginPage extends JFrame{
     JLabel lbLogin;
     private JButton btnExit;
     private JLabel lbInput;
-    JFrame login;
-
 
     public LoginPage(){
-        login = new JFrame("Login Frame");
 
         /*****************************************************
          * Icon image obtained from
          * Site: https://icon-icons.com
          * (Accessed 16 November 2022)
          * *****************************************************/
+        setIconImage(new ImageIcon(this.getClass().getResource("loginIconImage.png")).getImage());
 
-        login.setIconImage(new ImageIcon(this.getClass().getResource("loginIconImage.png")).getImage());
-        login.setContentPane(loginPanel);
-        login.setTitle("Till Login");
-        login.setLocationRelativeTo(null);
-        login.setSize(500, 500);
-        login.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        login.setVisible(false);
+        setContentPane(loginPanel);
+        setTitle("Till Login");
+        setLocationRelativeTo(null);
+        setSize(500, 500);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(false);
 
         String setLoginName = JOptionPane.showInputDialog("Please enter the name you wish to register as your login name",
                 "JohnBrosnan");
@@ -41,7 +38,7 @@ public class LoginPage extends JFrame{
 
         lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
 
-        login.setVisible(true);
+        setVisible(true);
 
         btnLogin.addActionListener(new ActionListener() {
             @Override
@@ -109,12 +106,10 @@ public class LoginPage extends JFrame{
                else{
                    System.out.println("Incorrect Login, Please re-enter correct login details");
                }
-
+               //create HomePage (Already set as visible)
                 new HomePage();
-                //homePage.setVisible(true);
-                /*For some reason setting the homePage as visible creates
-                another blank GUI window*/
-                login.setVisible(false);
+               //hide LoginPage
+                setVisible(false);
             }});
 
         btnClear.addActionListener(new ActionListener() {
