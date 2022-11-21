@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="CLeaned up code, the current JFrame is already explicit don't need: &quot;login.set&quot;, 17-11-2022&#10;&#10;token: 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">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/loginIconImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/loginIconImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +39,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "123",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "246",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "204",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/billy/Desktop/Java-Labs",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -93,8 +91,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HomePage" />
-        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.LoginPage" />
+        <item itemvalue="Application.RestaurantTillDriver" />
       </list>
     </recent_temporary>
   </component>
