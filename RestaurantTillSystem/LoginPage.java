@@ -30,6 +30,7 @@ public class LoginPage extends JFrame{
         setTitle("Till Login");
         setLocationRelativeTo(null);
         setSize(500, 500);
+        setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(false);
 
@@ -131,15 +132,18 @@ public class LoginPage extends JFrame{
                         + " Pin: " + pinCode);
 
                if(loginName.equals(setLoginName)){
-                System.out.println("Correct Login, Welcome");
+                JOptionPane.showMessageDialog(null,"Correct Login, Welcome","Welcome!",1);
+
+                   //create HomePage (Already set as visible)
+                   new HomePage();
+                   //hide LoginPage
+                   setVisible(false);
                 }
+
                else{
-                   System.out.println("Incorrect Login, Please re-enter correct login details");
+                   JOptionPane.showMessageDialog(null,"Incorrect Login, Please re-enter correct login details","Error",2);
                }
-               //create HomePage (Already set as visible)
-                new HomePage();
-               //hide LoginPage
-                setVisible(false);
+
             }});
 
         btnClear.addActionListener(new ActionListener() {
