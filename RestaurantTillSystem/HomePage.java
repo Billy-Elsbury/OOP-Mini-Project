@@ -6,6 +6,8 @@ package RestaurantTillSystem;
         import java.awt.event.ActionListener;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
+        import java.io.*;
+        import java.util.ArrayList;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
@@ -33,7 +35,7 @@ public class HomePage extends JFrame implements ActionListener {
         }
         catch (Exception e)
         {
-            JOptionPane.showMessageDialog((Component)null, "Icon Image not found or invalid");
+            JOptionPane.showMessageDialog(null, "Icon Image not found or invalid");
         }
 
         //Other menu bar parameters
@@ -56,7 +58,7 @@ public class HomePage extends JFrame implements ActionListener {
 
         menuItems = new JMenu("Menu Items");
 
-        String itemNames[] = {"Add Item","Edit Item","Remove Item","Query Item"};
+        String[] itemNames = {"Add Item","Edit Item","Remove Item","Query Item"};
 
         for(int i=0;i<itemNames.length;i++){
             item = new JMenuItem(itemNames[i]);
@@ -71,7 +73,7 @@ public class HomePage extends JFrame implements ActionListener {
 
         orders = new JMenu("Orders Menu");
 
-        String itemNames[] = {"Place Order","Edit Order","Cancel Order","Pay Bill"};
+        String[] itemNames = {"Place Order","Edit Order","Cancel Order","Pay Bill","View Orders"};
 
         for(int i=0;i<itemNames.length;i++){
             item = new JMenuItem(itemNames[i]);
@@ -86,7 +88,7 @@ public class HomePage extends JFrame implements ActionListener {
 
         admin = new JMenu("Admin Functions");
 
-        String itemNames[] = {"Item Analysis","Revenue Analysis"};
+        String[] itemNames = {"Item Analysis","Revenue Analysis"};
 
         for(int i=0;i<itemNames.length;i++){
             item = new JMenuItem(itemNames[i]);
@@ -96,7 +98,6 @@ public class HomePage extends JFrame implements ActionListener {
             admin.add(item);
         }
     }
-
 
     //Only used to run the HomePage on its own
     public static void main(String[] args) {
@@ -140,13 +141,76 @@ public class HomePage extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "Pay a bill and close an Order",
                     "Pay Bill", JOptionPane.INFORMATION_MESSAGE);
 
+        else if(e.getActionCommand().equals("View Orders")) {
+
+            //make new file for order info(code altered from Lab Sheet 15)
+            File outFile = new File("orderDetails.txt");
+
+            try {
+                FileOutputStream outputStream = new FileOutputStream(outFile);
+
+                Orders order1 = new Orders("Billy's Order", 1);
+                Orders order2 = new Orders("John's Order",2);
+
+                ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
+
+                objectOutStream.writeObject(order1);
+                objectOutStream.writeObject(order2);
+
+                outputStream.close();
+
+            } catch(FileNotFoundException fnfe){
+                System.out.println(fnfe.getStackTrace());
+                JOptionPane.showMessageDialog(null,"Orders file could not be found!",
+                        "Problem Finding File!",JOptionPane.ERROR_MESSAGE);
+            } catch(IOException ioe){ System.out.println(ioe.getStackTrace());
+                JOptionPane.showMessageDialog(null,"Orders file could not be written!",
+                        "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+            }
+
+            File orderFile = new File("orderDetails.txt");
+
+            try {
+                FileInputStream inputStream = new FileInputStream(orderFile);
+
+                ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
+
+                Orders order1 = (Orders) objectInStream.readObject();
+                Orders order2 = (Orders) objectInStream.readObject();
+
+                JOptionPane.showMessageDialog(null, "State of Order objects " +
+                                "read from the file are:\n\n" + order1 + "\n" +
+                                order2, "", JOptionPane.INFORMATION_MESSAGE);
+
+                inputStream.close();
+
+            } catch(FileNotFoundException fnfe){
+                fnfe.printStackTrace();
+                JOptionPane.showMessageDialog(null,"File could not be found!",
+                        " Problem Finding File!", JOptionPane.ERROR_MESSAGE);
+            } catch(IOException ioe){
+                ioe.printStackTrace();
+                JOptionPane.showMessageDialog(null,"File could not be read!",
+                        " Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+            } catch (ClassNotFoundException cnfe) {
+                cnfe.printStackTrace();
+                JOptionPane.showMessageDialog(null,"Could not convert object to"
+                        + " the appropriate class!","Problem Converting Object Read From File!",JOptionPane.ERROR_MESSAGE);
+
+            } catch (ClassCastException cce) {
+                cce.printStackTrace();
+                JOptionPane.showMessageDialog(null,"Could not convert the object to"
+                        + " the appropriate class!","Problem Converting Object!",JOptionPane.ERROR_MESSAGE); }
+        }
+
+
         //Admin Menu Listeners
         else if(e.getActionCommand().equals("Item Analysis"))
             JOptionPane.showMessageDialog(null,"Perform analysis on a menu Item",
-                    "Item Analysis",JOptionPane.INFORMATION_MESSAGE);
+                    " Item Analysis",JOptionPane.INFORMATION_MESSAGE);
 
         else if(e.getActionCommand().equals("Revenue Analysis"))
             JOptionPane.showMessageDialog(null, "Perform revenue analysis",
-                    "Revenue Analysis", JOptionPane.INFORMATION_MESSAGE);
+                    " Revenue Analysis", JOptionPane.INFORMATION_MESSAGE);
     }
 }

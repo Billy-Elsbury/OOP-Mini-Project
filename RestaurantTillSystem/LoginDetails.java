@@ -3,6 +3,7 @@ package RestaurantTillSystem;
 import java.io.*;
 
 public class LoginDetails implements Serializable {
+
     String loginName;
     int pin;
 

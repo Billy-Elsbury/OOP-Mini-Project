@@ -36,19 +36,18 @@ public class LoginPage extends JFrame{
         String setLoginName = JOptionPane.showInputDialog("Please enter the name you wish to register as your login name",
                 "JohnBrosnan");
         String setLoginPin = JOptionPane.showInputDialog("Please enter the pin you wish to register as your login name",
-                "T00224562");
+                "224562");
 
         lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
 
         setVisible(true);
 
-        //LoginName name = new LoginName();
-        //call loginDetails class
-
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //make new file for login info(reference Lab Sheet 15)
+
+                //make new file for login info(code altered from Lab Sheet 15)
+
                 File outFile = new File("loginDetails.txt");
 
                 try {
