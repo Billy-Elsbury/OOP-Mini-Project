@@ -4,14 +4,17 @@ package RestaurantTillSystem;
         import java.awt.*;
         import java.awt.event.ActionEvent;
         import java.awt.event.ActionListener;
+        import java.awt.event.MouseAdapter;
+        import java.awt.event.MouseEvent;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
+    private JLabel HomeImage;
     JMenu menuItems, orders, admin;
     JMenuItem item = null;
 
     public HomePage() {
-        //Menu bar parameters
+        //Menu bar main parameters
         createMenuItemsMenu();
         createOrdersMenu();
         createAdminMenu();
@@ -23,7 +26,8 @@ public class HomePage extends JFrame implements ActionListener {
         menuBar.add(orders);
         menuBar.add(admin);
 
-        //"try" to set the Icon image and "catch" a
+        /*"try" to set the Icon image and "catch" the exception if image does not exist
+        or is not where it is expected to be */
         try {
             setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
         }
@@ -39,9 +43,15 @@ public class HomePage extends JFrame implements ActionListener {
         setSize(900, 450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+        HomeImage.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+            }
+        });
     }
 
-    //Reference LabSheet14
+    //Create MenuBar using altered code from LabSheet14
     private void createMenuItemsMenu() {
 
         menuItems = new JMenu("Menu Items");
@@ -100,12 +110,15 @@ public class HomePage extends JFrame implements ActionListener {
         if(e.getActionCommand().equals("Add Item"))
             JOptionPane.showMessageDialog(null,"Adding a new Item to the menu",
                     "New Menu Item",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Edit Item"))
             JOptionPane.showMessageDialog(null,"Editing an existing menu Item",
                     "Edit Menu Item",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Remove Item"))
             JOptionPane.showMessageDialog(null,"Removing an existing menu Item",
                     "Remove Menu Item",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Query Item"))
             JOptionPane.showMessageDialog(null, "Querying an existing menu Item",
                     "Query Menu Item", JOptionPane.INFORMATION_MESSAGE);
@@ -114,12 +127,15 @@ public class HomePage extends JFrame implements ActionListener {
         else if(e.getActionCommand().equals("Place Order"))
             JOptionPane.showMessageDialog(null,"Place a new order into the till System",
                     "Place Order",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Edit Order"))
             JOptionPane.showMessageDialog(null,"Edit an existing Order",
                     "Edit Order",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Cancel Order"))
             JOptionPane.showMessageDialog(null,"Cancel an existing Order",
                     "Cancel Order",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Pay Bill"))
             JOptionPane.showMessageDialog(null, "Pay a bill and close an Order",
                     "Pay Bill", JOptionPane.INFORMATION_MESSAGE);
@@ -128,6 +144,7 @@ public class HomePage extends JFrame implements ActionListener {
         else if(e.getActionCommand().equals("Item Analysis"))
             JOptionPane.showMessageDialog(null,"Perform analysis on a menu Item",
                     "Item Analysis",JOptionPane.INFORMATION_MESSAGE);
+
         else if(e.getActionCommand().equals("Revenue Analysis"))
             JOptionPane.showMessageDialog(null, "Perform revenue analysis",
                     "Revenue Analysis", JOptionPane.INFORMATION_MESSAGE);

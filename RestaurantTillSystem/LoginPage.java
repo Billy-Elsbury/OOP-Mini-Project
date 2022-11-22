@@ -157,12 +157,4 @@ public class LoginPage extends JFrame{
             }
         });
     }
-
-    public static void main(String[] args) {
-        new LoginPage();
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }
