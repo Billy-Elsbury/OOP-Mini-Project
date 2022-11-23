@@ -16,6 +16,7 @@ public class HomePage extends JFrame implements ActionListener {
     private JButton btnExit;
     JMenu menuItems, orders, admin, exit;
     JMenuItem item = null;
+
     ArrayList<FoodItem> foodMenuItems = new ArrayList();
 
     /*****************************************************
