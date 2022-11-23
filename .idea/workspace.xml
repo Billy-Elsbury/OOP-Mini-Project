@@ -4,7 +4,10 @@
     <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added FoodItem class to facilitate add menu item and query menu item functions, 23-11-2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/FoodItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/FoodItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,17 +5,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LoginPage extends JFrame{
     JPanel loginPanel;
     JTextField tfName;
-    JTextField tfPinCode;
+    JPasswordField tfPinCode;
     JButton btnLogin;
     JButton btnClear;
     JLabel lbLogin;
     JButton btnExit;
     JLabel lbInput;
     private JLabel Image;
+    ArrayList<Object> mixtureOfObjects;
 
     public LoginPage(){
 
@@ -33,7 +35,6 @@ public class LoginPage extends JFrame{
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(false);
-
 
         String setLoginName = JOptionPane.showInputDialog("Please enter the name you wish to register as your login name",
                 "JoeBloggs");
@@ -68,70 +69,80 @@ public class LoginPage extends JFrame{
 
                     outputStream.close();
 
-                } catch(FileNotFoundException fnfe){
+                } catch (FileNotFoundException fnfe) {
                     System.out.println(fnfe.getStackTrace());
-                    JOptionPane.showMessageDialog(null,"File could not be found!",
-                            "Problem Finding File!",JOptionPane.ERROR_MESSAGE);
-                } catch(IOException ioe){ System.out.println(ioe.getStackTrace());
-                    JOptionPane.showMessageDialog(null,"File could not be written!",
-                            "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "File could not be found!",
+                            "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getStackTrace());
+                    JOptionPane.showMessageDialog(null, "File could not be written!",
+                            "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
                 }
 
                 File loginFile = new File("loginDetails.txt");
 
+                StringBuilder objectMixture = null;
                 try {
                     FileInputStream inputStream = new FileInputStream(loginFile);
 
                     ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
 
-                    ArrayList<Object> mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
+                    mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
 
-                    StringBuilder objectMixture = new StringBuilder();
+                    objectMixture = new StringBuilder();
 
                     for (Object x : mixtureOfObjects) {
                         objectMixture.append(x).append("\n");
                     }
 
-                    JOptionPane.showMessageDialog(null, "The valid login names from the " +
+                    JOptionPane.showMessageDialog(null, "Other valid login names from the " +
                                     "login array-list are:\n\n" + objectMixture,
                             "Output from login File", JOptionPane.INFORMATION_MESSAGE);
 
                     inputStream.close();
 
-                } catch(FileNotFoundException fnfe){
+                } catch (FileNotFoundException fnfe) {
                     fnfe.printStackTrace();
-                    JOptionPane.showMessageDialog(null,"File could not be found!",
+                    JOptionPane.showMessageDialog(null, "File could not be found!",
                             "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
-                } catch(IOException ioe){
+                } catch (IOException ioe) {
                     ioe.printStackTrace();
-                    JOptionPane.showMessageDialog(null,"File could not be read!",
-                            "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "File could not be read!",
+                            "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
                 } catch (ClassNotFoundException cnfe) {
                     cnfe.printStackTrace();
-                    JOptionPane.showMessageDialog(null,"Could not convert object to"
-                            + " the appropriate class!","Problem Converting Object Read From File!",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Could not convert object to"
+                            + " the appropriate class!", "Problem Converting Object Read From File!", JOptionPane.ERROR_MESSAGE);
 
                 } catch (ClassCastException cce) {
                     cce.printStackTrace();
-                    JOptionPane.showMessageDialog(null,"Could not convert the object to"
-                        + "the appropriate class!","Problem Converting Object!",JOptionPane.ERROR_MESSAGE); }
+                    JOptionPane.showMessageDialog(null, "Could not convert the object to"
+                            + "the appropriate class!", "Problem Converting Object!", JOptionPane.ERROR_MESSAGE);
+                }
 
                 String loginName = tfName.getText();
                 String pinCode = tfPinCode.getText();
 
-                if(loginName.equals(setLoginName)){
-                    JOptionPane.showMessageDialog(null,"Correct Login, Welcome","Welcome!",1);
+                if (loginName.equals(setLoginName)) {
+                    JOptionPane.showMessageDialog(null, "Correct Login from newly registered Login, Welcome", "Welcome!", 1);
 
                     //create HomePage (Already set as visible)
                     new HomePage();
                     //hide LoginPage
-                    setVisible(false);
+                    dispose();
                 }
 
-                //else if(loginName.equals())
+                else if (mixtureOfObjects.contains(loginName)){
+                    JOptionPane.showMessageDialog(null, "Correct Login from Login list file, Welcome", "Welcome!", 1);
 
-                else{
-                    JOptionPane.showMessageDialog(null,"Incorrect Login, Please re-enter correct login details","Error",2);
+                    //create HomePage (Already set as visible)
+                    new HomePage();
+                    //hide LoginPage
+                    dispose();
+                }
+
+                else {
+                    JOptionPane.showMessageDialog(null, "Incorrect Login, Please re-enter correct login details", "Error", 2);
                     lbInput.setText("You inputted = Name: " + loginName
                             + " Pin: " + pinCode);
                 }

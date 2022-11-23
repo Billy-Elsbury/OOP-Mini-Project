@@ -13,11 +13,18 @@ public class HomePage extends JFrame implements ActionListener {
     private JLabel HomeImage;
     private JLabel dateLabel;
     private JTextArea menuArea;
-    JMenu menuItems, orders, admin;
+    private JButton btnExit;
+    JMenu menuItems, orders, admin, exit;
     JMenuItem item = null;
     ArrayList<FoodItem> foodMenuItems = new ArrayList();
 
-    FoodItem f1 = new FoodItem("Pizza", "Italian",12);
+    /*****************************************************
+     * Gif Incorporation idea borrowed from Luke Foley T00224345
+     * (Accessed 23 November 2022)
+     * *****************************************************/
+    private JLabel lblCatWave;
+
+    FoodItem f1 = new FoodItem("Pizza", "Italian",12.50);
 
     ArrayList<FoodItem> allFoodItems = new ArrayList<>(Arrays.asList(f1));
 
@@ -28,6 +35,7 @@ public class HomePage extends JFrame implements ActionListener {
         createMenuItemsMenu();
         createOrdersMenu();
         createAdminMenu();
+        Clock();
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         menuBar.setBackground(Color.LIGHT_GRAY);
@@ -52,32 +60,45 @@ public class HomePage extends JFrame implements ActionListener {
         setContentPane(homePanel);
         setTitle("Home Page");
         setLocationRelativeTo(null);
-        setSize(900, 450);
+        setSize(800, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-        this.Clock();
         HomeImage.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
             }
         });
-    }
 
-    //Create MenuBar using altered code from LabSheet14
-    private void createMenuItemsMenu() {
+        btnExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-        menuItems = new JMenu("Menu Items");
+                /*****************************************************
+                 * Custom JOptionDialog code created referencing:
+                 * Site: https://stackoverflow.com/questions/32062761
+                 * (Accessed 23 November 2022)
+                 * *****************************************************/
 
-        String[] itemNames = {"Add Item", "Edit Item", "Remove Item", "Query Item"};
+                Object[] buttons = {"Exit", "Cancel", "Return to login page"};
 
-        for (int i = 0; i < itemNames.length; i++) {
-            item = new JMenuItem(itemNames[i]);
-            item.addActionListener(this);
+                int choice = JOptionPane.showOptionDialog(btnExit,
+                        "Are you sure you wish to exit?", "Exit System",
+                        JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null, buttons,  buttons[0]);
 
-            menuItems.addSeparator();
-            menuItems.add(item);
-        }
+                if (choice == 0){
+                System.exit(0);
+                }
+                else if (choice ==2){
+                    //show LoginPage (Already set as visible)
+                    new LoginPage();
+                    //hide HomePage
+                    setVisible(false);
+                }
+            }
+        });
     }
 
     /*****************************************************
@@ -105,6 +126,22 @@ public class HomePage extends JFrame implements ActionListener {
             }
         });
         clock.start();
+    }
+
+    //Create Menus using altered code from LabSheet14
+    private void createMenuItemsMenu() {
+
+        menuItems = new JMenu("Menu Items");
+
+        String[] itemNames = {"Add Item", "Edit Item", "Remove Item", "Query Item"};
+
+        for (int i = 0; i < itemNames.length; i++) {
+            item = new JMenuItem(itemNames[i]);
+            item.addActionListener(this);
+
+            menuItems.addSeparator();
+            menuItems.add(item);
+        }
     }
 
     private void createOrdersMenu() {
