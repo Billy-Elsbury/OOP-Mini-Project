@@ -7,6 +7,7 @@ package RestaurantTillSystem;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
         import java.util.*;
+        import RestaurantTillSystem.AdminDatabaseFunctions;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
@@ -14,7 +15,7 @@ public class HomePage extends JFrame implements ActionListener {
     private JLabel dateLabel;
     private JTextArea menuArea;
     private JButton btnExit;
-    JMenu menuItems, orders, admin, exit;
+    JMenu menuItems, orders, admin;
     JMenuItem item = null;
 
     ArrayList<FoodItem> foodMenuItems = new ArrayList();
@@ -24,12 +25,11 @@ public class HomePage extends JFrame implements ActionListener {
      * (Accessed 23 November 2022)
      * *****************************************************/
     private JLabel lblCatWave;
+    private FoodItem foodItem;
 
     FoodItem f1 = new FoodItem("Pizza", "Italian",12.50);
 
     ArrayList<FoodItem> allFoodItems = new ArrayList<>(Arrays.asList(f1));
-
-    private FoodItem foodItem;
 
     public HomePage() {
         //Menu bar main parameters
@@ -233,6 +233,12 @@ public class HomePage extends JFrame implements ActionListener {
 
 
 
+    public void performRevenueAnalysis() {
+        AdminDatabaseFunctions performRevenueAnalysis = new AdminDatabaseFunctions();
+        performRevenueAnalysis.RetrieveFromDatabase();
+        System.out.print("Database maybe worked?");
+    }
+
 
 
     @Override
@@ -254,7 +260,7 @@ public class HomePage extends JFrame implements ActionListener {
         else if (e.getActionCommand().equals("Query Item"))
             queryMenuItem(allFoodItems);
 
-            //Orders Menu Listeners
+        //Orders Menu Listeners
         else if (e.getActionCommand().equals("Place Order"))
             JOptionPane.showMessageDialog(null, "Place a new order into the till System",
                     "Place Order", JOptionPane.INFORMATION_MESSAGE);
@@ -283,7 +289,11 @@ public class HomePage extends JFrame implements ActionListener {
                     " Item Analysis",JOptionPane.INFORMATION_MESSAGE);
 
         else if(e.getActionCommand().equals("Revenue Analysis"))
-            JOptionPane.showMessageDialog(null, "Perform revenue analysis",
-                    " Revenue Analysis", JOptionPane.INFORMATION_MESSAGE);
+            performRevenueAnalysis();
     }
+
+
 }
+
+
+
