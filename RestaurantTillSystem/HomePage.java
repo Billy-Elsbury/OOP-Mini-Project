@@ -6,9 +6,7 @@ package RestaurantTillSystem;
         import java.awt.event.ActionListener;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
-        import java.io.*;
-        import java.util.Calendar;
-        import java.util.GregorianCalendar;
+        import java.util.*;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
@@ -17,13 +15,19 @@ public class HomePage extends JFrame implements ActionListener {
     private JTextArea menuArea;
     JMenu menuItems, orders, admin;
     JMenuItem item = null;
+    ArrayList<FoodItem> foodMenuItems = new ArrayList();
+
+    FoodItem f1 = new FoodItem("Pizza", "Italian",1);
+
+    ArrayList<FoodItem> allFoodItems = new ArrayList<>(Arrays.asList(f1));
+
+    private FoodItem foodItem;
 
     public HomePage() {
         //Menu bar main parameters
         createMenuItemsMenu();
         createOrdersMenu();
         createAdminMenu();
-
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
         menuBar.setBackground(Color.LIGHT_GRAY);
@@ -40,9 +44,7 @@ public class HomePage extends JFrame implements ActionListener {
         or is not where it is expected to be */
         try {
             setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Icon Image not found or invalid");
         }
 
@@ -67,9 +69,9 @@ public class HomePage extends JFrame implements ActionListener {
 
         menuItems = new JMenu("Menu Items");
 
-        String[] itemNames = {"Add Item","Edit Item","Remove Item","Query Item"};
+        String[] itemNames = {"Add Item", "Edit Item", "Remove Item", "Query Item"};
 
-        for(int i=0;i<itemNames.length;i++){
+        for (int i = 0; i < itemNames.length; i++) {
             item = new JMenuItem(itemNames[i]);
             item.addActionListener(this);
 
@@ -79,7 +81,7 @@ public class HomePage extends JFrame implements ActionListener {
     }
 
     /*****************************************************
-     * Clock code taken entirely from RestuarantSystem.jar in LECTURER JohnBrosnan\ObjectOrientatedProgramming\MiniProjectStuff\SomeOldYear2MiniProjects
+     * Clock code taken entirely from RestaurantSystem.jar in LECTURER JohnBrosnan\ObjectOrientatedProgramming\MiniProjectStuff\SomeOldYear2MiniProjects
      * and only edited a minor amount to work with this system.
      * https://ittralee-my.sharepoint.com/:u:/r/personal/lt00036791_365s_ittralee_ie/Documents/Object%20Oriented%20Programming/MiniProjectStuff/SomeOldYear2MiniProjects/RestaurantSystem.jar?csf=1&web=1&e=VprIHW
      * (Accessed 22 November 2022)
@@ -87,14 +89,14 @@ public class HomePage extends JFrame implements ActionListener {
     public void Clock() {
         Thread clock = new Thread(() -> {
             try {
-                while(true) {
+                while (true) {
                     Calendar cld = new GregorianCalendar();
-                    int day = cld.get(5);
-                    int month = cld.get(2) + 1;
-                    int year = cld.get(1);
-                    int sec = cld.get(13);
-                    int min = cld.get(12);
-                    int hour = cld.get(11);
+                    int day = cld.get(Calendar.DAY_OF_MONTH);
+                    int month = cld.get(Calendar.MONTH) + 1;
+                    int year = cld.get(Calendar.YEAR);
+                    int sec = cld.get(Calendar.SECOND);
+                    int min = cld.get(Calendar.MINUTE);
+                    int hour = cld.get(Calendar.HOUR);
                     HomePage.this.dateLabel.setText(day + "/" + month + "/" + year + "  " + hour + ":" + min + ":" + sec);
                     Thread.sleep(1000L);
                 }
@@ -109,9 +111,9 @@ public class HomePage extends JFrame implements ActionListener {
 
         orders = new JMenu("Orders Menu");
 
-        String[] itemNames = {"Place Order","Edit Order","Cancel Order","Pay Bill","View Orders"};
+        String[] itemNames = {"Place Order", "Edit Order", "Cancel Order", "Pay Bill", "View Orders"};
 
-        for(int i=0;i<itemNames.length;i++){
+        for (int i = 0; i < itemNames.length; i++) {
             item = new JMenuItem(itemNames[i]);
             item.addActionListener(this);
 
@@ -124,9 +126,9 @@ public class HomePage extends JFrame implements ActionListener {
 
         admin = new JMenu("Admin Functions");
 
-        String[] itemNames = {"Item Analysis","Revenue Analysis"};
+        String[] itemNames = {"Item Analysis", "Revenue Analysis"};
 
-        for(int i=0;i<itemNames.length;i++){
+        for (int i = 0; i < itemNames.length; i++) {
             item = new JMenuItem(itemNames[i]);
             item.addActionListener(this);
 
@@ -140,103 +142,99 @@ public class HomePage extends JFrame implements ActionListener {
         new HomePage();
     }
 
+    public void addMenuItem() {
+
+        String menuItemName;
+        String description;
+        double price;
+        boolean valid = false;
+
+        while (!valid) {
+            try {
+                menuItemName = JOptionPane.showInputDialog("Enter menu item's Name");
+                description = JOptionPane.showInputDialog("Enter menu item's Description");
+
+                try {
+                    price = Double.parseDouble(JOptionPane.showInputDialog("Enter menu item's Price"));
+                    JOptionPane.showMessageDialog(null, "New Menu Item '" + menuItemName + "' has been added to the system");
+                    FoodItem fi = new FoodItem(menuItemName, description, price);
+                    allFoodItems.add(fi);
+                    valid = true;
+
+
+                } catch (NumberFormatException var10) {
+                    JOptionPane.showMessageDialog((Component) null, "The price you entered is invalid, please enter valid price");
+                }
+            } catch (NullPointerException var11) {
+                int choose = JOptionPane.showConfirmDialog((Component) null, "Field must not be empty. Do you want to continue?", "Confirmation", 0);
+                if (choose != 0) {
+                    break;
+                }
+            }
+        }
+        this.foodMenuItems.add(this.foodItem);
+    }
+
+    public void queryMenuItem(ArrayList<FoodItem>allFoodItems) {
+
+            String allFoodItemData = "";
+            FoodItem foodItem;
+
+            Iterator<FoodItem> iterator = allFoodItems.iterator();
+
+            while(iterator.hasNext()) {
+                foodItem = iterator.next();
+                if (foodItem != null)
+                    allFoodItemData += foodItem + "\n\n";
+
+            }
+
+           JOptionPane.showMessageDialog(null, allFoodItemData.toString());
+        }
+
+
+
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
         //Menu Items Menu Listeners
-        if(e.getActionCommand().equals("Add Item"))
-            JOptionPane.showMessageDialog(null,"Adding a new Item to the menu",
-                    "New Menu Item",JOptionPane.INFORMATION_MESSAGE);
+        if (e.getActionCommand().equals("Add Item")) {
+            addMenuItem();
+        }
 
-        else if(e.getActionCommand().equals("Edit Item"))
-            JOptionPane.showMessageDialog(null,"Editing an existing menu Item",
-                    "Edit Menu Item",JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Edit Item"))
+            JOptionPane.showMessageDialog(null, "Editing an existing menu Item",
+                    "Edit Menu Item", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("Remove Item"))
-            JOptionPane.showMessageDialog(null,"Removing an existing menu Item",
-                    "Remove Menu Item",JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Remove Item"))
+            JOptionPane.showMessageDialog(null, "Removing an existing menu Item",
+                    "Remove Menu Item", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("Query Item"))
-            JOptionPane.showMessageDialog(null, "Querying an existing menu Item",
-                    "Query Menu Item", JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Query Item"))
+            queryMenuItem(allFoodItems);
 
-        //Orders Menu Listeners
-        else if(e.getActionCommand().equals("Place Order"))
-            JOptionPane.showMessageDialog(null,"Place a new order into the till System",
-                    "Place Order",JOptionPane.INFORMATION_MESSAGE);
+            //Orders Menu Listeners
+        else if (e.getActionCommand().equals("Place Order"))
+            JOptionPane.showMessageDialog(null, "Place a new order into the till System",
+                    "Place Order", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("Edit Order"))
-            JOptionPane.showMessageDialog(null,"Edit an existing Order",
-                    "Edit Order",JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Edit Order"))
+            JOptionPane.showMessageDialog(null, "Edit an existing Order",
+                    "Edit Order", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("Cancel Order"))
-            JOptionPane.showMessageDialog(null,"Cancel an existing Order",
-                    "Cancel Order",JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Cancel Order"))
+            JOptionPane.showMessageDialog(null, "Cancel an existing Order",
+                    "Cancel Order", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("Pay Bill"))
+        else if (e.getActionCommand().equals("Pay Bill"))
             JOptionPane.showMessageDialog(null, "Pay a bill and close an Order",
                     "Pay Bill", JOptionPane.INFORMATION_MESSAGE);
 
-        else if(e.getActionCommand().equals("View Orders")) {
-
-            //make new file for order info(code altered from Lab Sheet 15)
-            File outFile = new File("orderDetails.txt");
-
-            try {
-                FileOutputStream outputStream = new FileOutputStream(outFile);
-
-                Orders order1 = new Orders("Billy's Order", 1);
-                Orders order2 = new Orders("John's Order",2);
-
-                ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
-
-                objectOutStream.writeObject(order1);
-                objectOutStream.writeObject(order2);
-
-                outputStream.close();
-
-            } catch(FileNotFoundException fnfe){
-                System.out.println(fnfe.getStackTrace());
-                JOptionPane.showMessageDialog(null,"Orders file could not be found!",
-                        "Problem Finding File!",JOptionPane.ERROR_MESSAGE);
-            } catch(IOException ioe){ System.out.println(ioe.getStackTrace());
-                JOptionPane.showMessageDialog(null,"Orders file could not be written!",
-                        "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
-            }
-
-            File orderFile = new File("orderDetails.txt");
-
-            try {
-                FileInputStream inputStream = new FileInputStream(orderFile);
-
-                ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
-
-                Orders order1 = (Orders) objectInStream.readObject();
-                Orders order2 = (Orders) objectInStream.readObject();
-
-                JOptionPane.showMessageDialog(null, "State of Order objects " +
-                                "read from the file are:\n\n" + order1 + "\n" +
-                                order2, "", JOptionPane.INFORMATION_MESSAGE);
-
-                inputStream.close();
-
-            } catch(FileNotFoundException fnfe){
-                fnfe.printStackTrace();
-                JOptionPane.showMessageDialog(null,"File could not be found!",
-                        " Problem Finding File!", JOptionPane.ERROR_MESSAGE);
-            } catch(IOException ioe){
-                ioe.printStackTrace();
-                JOptionPane.showMessageDialog(null,"File could not be read!",
-                        " Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
-            } catch (ClassNotFoundException cnfe) {
-                cnfe.printStackTrace();
-                JOptionPane.showMessageDialog(null,"Could not convert object to"
-                        + " the appropriate class!","Problem Converting Object Read From File!",JOptionPane.ERROR_MESSAGE);
-
-            } catch (ClassCastException cce) {
-                cce.printStackTrace();
-                JOptionPane.showMessageDialog(null,"Could not convert the object to"
-                        + " the appropriate class!","Problem Converting Object!",JOptionPane.ERROR_MESSAGE); }
+        else if (e.getActionCommand().equals("View Orders")) {
+            JOptionPane.showMessageDialog(null, "View existing orders",
+                    "View Order", JOptionPane.INFORMATION_MESSAGE);
         }
 
 

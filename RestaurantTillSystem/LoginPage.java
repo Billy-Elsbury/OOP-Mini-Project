@@ -34,10 +34,11 @@ public class LoginPage extends JFrame{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(false);
 
+
         String setLoginName = JOptionPane.showInputDialog("Please enter the name you wish to register as your login name",
-                "JohnBrosnan");
+                "JoeBloggs");
         String setLoginPin = JOptionPane.showInputDialog("Please enter the pin you wish to register as your login name",
-                "224562");
+                "420420");
 
         lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
 
@@ -54,20 +55,14 @@ public class LoginPage extends JFrame{
                 try {
                     FileOutputStream outputStream = new FileOutputStream(outFile);
 
-                    LoginDetails login1 = new LoginDetails("BillyElsbury", 76146);
-                    LoginDetails login2 = new LoginDetails("JohnBrosnan",12345);
-
                     ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
-
-                    objectOutStream.writeObject(login1);
-                    objectOutStream.writeObject(login2);
 
                     ArrayList<Object> mixtureOfObjects = new ArrayList<>();
 
-                    mixtureOfObjects.add("Billy");
-                    mixtureOfObjects.add("Billy2");
-                    mixtureOfObjects.add("Billy3");
-                    mixtureOfObjects.add("Billy4");
+                    mixtureOfObjects.add("BillyElsbury");
+                    mixtureOfObjects.add("JohnBrosnan");
+                    mixtureOfObjects.add("LukeFoley");
+                    mixtureOfObjects.add("DarraghQuinn");
 
                     objectOutStream.writeObject(mixtureOfObjects);
 
@@ -82,7 +77,6 @@ public class LoginPage extends JFrame{
                             "Problem Writing to File!",JOptionPane.ERROR_MESSAGE);
                 }
 
-
                 File loginFile = new File("loginDetails.txt");
 
                 try {
@@ -90,21 +84,17 @@ public class LoginPage extends JFrame{
 
                     ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
 
-                    LoginDetails login1 = (LoginDetails) objectInStream.readObject();
-                    LoginDetails login2 = (LoginDetails) objectInStream.readObject();
-
                     ArrayList<Object> mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
 
-                    String objectMixture = "";
+                    StringBuilder objectMixture = new StringBuilder();
 
-                    for (Object x : mixtureOfObjects)
-                        objectMixture += x + "\n";
+                    for (Object x : mixtureOfObjects) {
+                        objectMixture.append(x).append("\n");
+                    }
 
-                    JOptionPane.showMessageDialog(null, "State of standalone objects " +
-                            "read from the file are:\n\n" + login1 + "\n" +
-                            login2 +
-                            "\n\nThe ones from the array-list are:\n\n" + objectMixture,
-                            "Output from File", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "The valid login names from the " +
+                                    "login array-list are:\n\n" + objectMixture,
+                            "Output from login File", JOptionPane.INFORMATION_MESSAGE);
 
                     inputStream.close();
 
@@ -128,23 +118,25 @@ public class LoginPage extends JFrame{
 
                 String loginName = tfName.getText();
                 String pinCode = tfPinCode.getText();
-                lbInput.setText("You inputted = Name: " + loginName
-                        + " Pin: " + pinCode);
 
-               if(loginName.equals(setLoginName)){
-                JOptionPane.showMessageDialog(null,"Correct Login, Welcome","Welcome!",1);
+                if(loginName.equals(setLoginName)){
+                    JOptionPane.showMessageDialog(null,"Correct Login, Welcome","Welcome!",1);
 
-                   //create HomePage (Already set as visible)
-                   new HomePage();
-                   //hide LoginPage
-                   setVisible(false);
+                    //create HomePage (Already set as visible)
+                    new HomePage();
+                    //hide LoginPage
+                    setVisible(false);
                 }
 
-               else{
-                   JOptionPane.showMessageDialog(null,"Incorrect Login, Please re-enter correct login details","Error",2);
-               }
+                //else if(loginName.equals())
 
-            }});
+                else{
+                    JOptionPane.showMessageDialog(null,"Incorrect Login, Please re-enter correct login details","Error",2);
+                    lbInput.setText("You inputted = Name: " + loginName
+                            + " Pin: " + pinCode);
+                }
+            }
+        });
 
         btnClear.addActionListener(new ActionListener() {
             @Override
