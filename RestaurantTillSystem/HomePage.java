@@ -17,7 +17,7 @@ public class HomePage extends JFrame implements ActionListener {
     JMenuItem item = null;
     ArrayList<FoodItem> foodMenuItems = new ArrayList();
 
-    FoodItem f1 = new FoodItem("Pizza", "Italian",1);
+    FoodItem f1 = new FoodItem("Pizza", "Italian",12);
 
     ArrayList<FoodItem> allFoodItems = new ArrayList<>(Arrays.asList(f1));
 
@@ -146,16 +146,16 @@ public class HomePage extends JFrame implements ActionListener {
 
         String menuItemName;
         String description;
-        double price;
+        int price;
         boolean valid = false;
 
         while (!valid) {
             try {
                 menuItemName = JOptionPane.showInputDialog("Enter menu item's Name");
                 description = JOptionPane.showInputDialog("Enter menu item's Description");
+                price = Integer.parseInt(JOptionPane.showInputDialog("Enter menu item's Price"));
 
                 try {
-                    price = Double.parseDouble(JOptionPane.showInputDialog("Enter menu item's Price"));
                     JOptionPane.showMessageDialog(null, "New Menu Item '" + menuItemName + "' has been added to the system");
                     FoodItem fi = new FoodItem(menuItemName, description, price);
                     allFoodItems.add(fi);
@@ -177,19 +177,20 @@ public class HomePage extends JFrame implements ActionListener {
 
     public void queryMenuItem(ArrayList<FoodItem>allFoodItems) {
 
-            String allFoodItemData = "";
+            String FoodItemsString = "";
             FoodItem foodItem;
 
             Iterator<FoodItem> iterator = allFoodItems.iterator();
 
-            while(iterator.hasNext()) {
+            while(iterator.hasNext())
+            {
                 foodItem = iterator.next();
                 if (foodItem != null)
-                    allFoodItemData += foodItem + "\n\n";
+                    FoodItemsString += foodItem + "\n\n";
 
             }
 
-           JOptionPane.showMessageDialog(null, allFoodItemData.toString());
+           JOptionPane.showMessageDialog(null, FoodItemsString);
         }
 
 

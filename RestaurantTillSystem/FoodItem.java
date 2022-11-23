@@ -5,16 +5,16 @@ import java.io.*;
 public class FoodItem implements Serializable {
     private String menuItemName;
     private String description;
-    private double price;
+    private int price;
 
     public FoodItem() {
-        this("Name Unknown", "No Description", 0.0);
+        this("Name Unknown", "No Description", 0);
     }
 
-    public FoodItem(String menuItemName, String description, double price) {
-        this.menuItemName = menuItemName;
-        this.description = description;
-        this.price = price;
+    public FoodItem(String menuItemName, String description, int price) {
+        setMenuItemName(menuItemName);
+        setDescription(description);
+        setPrice(price);
     }
     public void setMenuItemName(String menuItemName) {
         this.menuItemName = menuItemName;
@@ -22,8 +22,8 @@ public class FoodItem implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setPrice(double Price) {
-        this.price = this.price;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public String getMenuItemName() {
@@ -32,10 +32,10 @@ public class FoodItem implements Serializable {
     public String getDescription() {
         return this.description;
     }
-    public double getPrice() {
-        return this.price;
+    public int getPrice() {
+        return price;
     }
     public String toString() {
-        return String.format("Category: %s\nFoodType: %s\nDescription: %s\nPrice: \n",getMenuItemName(), getDescription(), getPrice());
+        return String.format("Food Item Name: " + getMenuItemName() + "\nFood Description: " +getDescription() + "\nPrice: " + getPrice());
     }
 }
