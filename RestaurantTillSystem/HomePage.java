@@ -7,29 +7,28 @@ package RestaurantTillSystem;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
         import java.util.*;
-        import RestaurantTillSystem.AdminDatabaseFunctions;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
-    private JLabel HomeImage;
-    private JLabel dateLabel;
-    private JTextArea menuArea;
-    private JButton btnExit;
+    JLabel HomeImage;
+    JLabel dateLabel;
+    JTextArea menuArea;
+    JButton btnExit;
     JMenu menuItems, orders, admin;
     JMenuItem item = null;
 
-    ArrayList<FoodItem> foodMenuItems = new ArrayList();
+    ArrayList<MenuItem> foodMenuItems = new ArrayList();
 
     /*****************************************************
      * Gif Incorporation idea borrowed from Luke Foley T00224345
      * (Accessed 23 November 2022)
      * *****************************************************/
     private JLabel lblCatWave;
-    private FoodItem foodItem;
+    private MenuItem menuItem;
 
-    FoodItem f1 = new FoodItem("Pizza", "Italian",12.50);
+    MenuItem firstMenuItem = new MenuItem("Pizza", "Italian",12.50);
 
-    ArrayList<FoodItem> allFoodItems = new ArrayList<>(Arrays.asList(f1));
+    ArrayList<MenuItem> allMenuItems = new ArrayList<>(Arrays.asList(firstMenuItem));
 
     public HomePage() {
         //Menu bar main parameters
@@ -43,6 +42,8 @@ public class HomePage extends JFrame implements ActionListener {
         menuBar.add(menuItems);
         menuBar.add(orders);
         menuBar.add(admin);
+        menuArea.setSize(100, 50);
+        menuArea.setText("");
 
         /*****************************************************
          * Icon image obtained from
@@ -195,8 +196,8 @@ public class HomePage extends JFrame implements ActionListener {
 
                 try {
                     JOptionPane.showMessageDialog(null, "New Menu Item '" + menuItemName + "' has been added to the system");
-                    FoodItem fi = new FoodItem(menuItemName, description, price);
-                    allFoodItems.add(fi);
+                    MenuItem fi = new MenuItem(menuItemName, description, price);
+                    allMenuItems.add(fi);
                     valid = true;
 
 
@@ -210,26 +211,29 @@ public class HomePage extends JFrame implements ActionListener {
                 }
             }
         }
-        this.foodMenuItems.add(this.foodItem);
+        this.foodMenuItems.add(this.menuItem);
     }
 
-    public void queryMenuItem(ArrayList<FoodItem>allFoodItems) {
+    public void queryMenuItem(ArrayList<MenuItem> allMenuItems) {
 
             String FoodItemsString = "";
-            FoodItem foodItem;
+            MenuItem menuItem;
 
-            Iterator<FoodItem> iterator = allFoodItems.iterator();
+            Iterator<MenuItem> iterator = allMenuItems.iterator();
 
             while(iterator.hasNext())
             {
-                foodItem = iterator.next();
-                if (foodItem != null)
-                    FoodItemsString += foodItem + "\n\n";
+                menuItem = iterator.next();
+                if (menuItem != null)
+                    FoodItemsString += menuItem + "\n\n";
 
             }
 
            JOptionPane.showMessageDialog(null, FoodItemsString);
+
+            menuArea.setText(""+FoodItemsString);
         }
+
 
 
 
@@ -258,7 +262,7 @@ public class HomePage extends JFrame implements ActionListener {
                     "Remove Menu Item", JOptionPane.INFORMATION_MESSAGE);
 
         else if (e.getActionCommand().equals("Query Item"))
-            queryMenuItem(allFoodItems);
+            queryMenuItem(allMenuItems);
 
         //Orders Menu Listeners
         else if (e.getActionCommand().equals("Place Order"))
@@ -291,8 +295,6 @@ public class HomePage extends JFrame implements ActionListener {
         else if(e.getActionCommand().equals("Revenue Analysis"))
             performRevenueAnalysis();
     }
-
-
 }
 
 

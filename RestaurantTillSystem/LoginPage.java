@@ -16,7 +16,9 @@ public class LoginPage extends JFrame{
     JButton btnExit;
     JLabel lbInput;
     private JLabel Image;
-    ArrayList<Object> mixtureOfObjects;
+    private JButton addNewLoginButton;
+    ArrayList<Object> mixtureOfObjects = new ArrayList<>();
+    File outFile = new File("loginDetails.txt");
 
     public LoginPage(){
 
@@ -40,7 +42,7 @@ public class LoginPage extends JFrame{
         String setLoginPin = JOptionPane.showInputDialog("Please enter the pin you wish to register as your login name",
                 "420420");
 
-        lbLogin.setText("Valid details = Name: " + setLoginName + " Pin: " + setLoginPin);
+        lbLogin.setText("Newly Registered login details = Name: " + setLoginName + " Pin: " + setLoginPin);
 
         setVisible(true);
 
@@ -48,21 +50,130 @@ public class LoginPage extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //make new file for login info(code altered from Lab Sheet 15)
-
-                File outFile = new File("loginDetails.txt");
-
                 try {
                     FileOutputStream outputStream = new FileOutputStream(outFile);
 
                     ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
 
-                    ArrayList<Object> mixtureOfObjects = new ArrayList<>();
-
                     mixtureOfObjects.add("BillyElsbury");
                     mixtureOfObjects.add("JohnBrosnan");
                     mixtureOfObjects.add("LukeFoley");
                     mixtureOfObjects.add("DarraghQuinn");
+                    mixtureOfObjects.add(setLoginName);
+
+                    objectOutStream.writeObject(mixtureOfObjects);
+
+                    outputStream.close();
+
+                } catch (FileNotFoundException fnfe) {
+                    System.out.println(fnfe.getStackTrace());
+                    JOptionPane.showMessageDialog(null, "File could not be found!",
+                            "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
+                } catch (IOException ioe) {
+                    System.out.println(ioe.getStackTrace());
+                    JOptionPane.showMessageDialog(null, "File could not be written!",
+                            "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
+                }
+
+                //serialization code altered from Lab Sheet 15
+
+                File loginFile = new File("loginDetails.txt");
+
+                StringBuilder objectMixture = null;
+                try {
+                    FileInputStream inputStream = new FileInputStream(loginFile);
+
+                    ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
+
+                    mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
+
+                    objectMixture = new StringBuilder();
+
+                    for (Object x : mixtureOfObjects) {
+                        objectMixture.append(x).append("\n");
+                    }
+
+                    inputStream.close();
+
+
+                } catch (FileNotFoundException fnfe) {
+                    fnfe.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "File could not be found!",
+                            "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "File could not be read!",
+                            "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
+                } catch (ClassNotFoundException cnfe) {
+                    cnfe.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Could not convert object to"
+                            + " the appropriate class!", "Problem Converting Object Read From File!", JOptionPane.ERROR_MESSAGE);
+
+                } catch (ClassCastException cce) {
+                    cce.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Could not convert the object to"
+                            + "the appropriate class!", "Problem Converting Object!", JOptionPane.ERROR_MESSAGE);
+                }
+
+                String loginName = tfName.getText();
+                String pinCode = String.valueOf(tfPinCode.getPassword());
+
+                if (loginName.equals(setLoginName)) {
+                    JOptionPane.showMessageDialog(null, "Correct Login from newly registered Login, Welcome", "Welcome!", 1);
+
+                    //create HomePage (Already set as visible)
+                    new HomePage();
+                    //hide LoginPage
+                    dispose();
+                }
+
+                else if (mixtureOfObjects.contains(loginName)){
+                    JOptionPane.showMessageDialog(null, "Correct Login from Login list file, Welcome: " + loginName, "Welcome!", 1);
+
+                    //create HomePage (Already set as visible)
+                    new HomePage();
+                    //hide LoginPage
+                    dispose();
+                }
+
+                else {
+                    JOptionPane.showMessageDialog(null, "Incorrect Login, Please re-enter correct login details", "Error", 2);
+                    lbInput.setText("You inputted = Name: " + loginName
+                            + " Pin: " + pinCode);
+                    JOptionPane.showMessageDialog(null, "All valid login names from the " +
+                                    "login array-list are:\n\n" + objectMixture,
+                            "Output from login File", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        });
+
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfName.setText("");
+                tfPinCode.setText("");
+            }});
+
+        btnExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        addNewLoginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String newLogin = JOptionPane.showInputDialog(null, "Please enter a new login");
+
+                //serialization code altered from Lab Sheet 15
+                try {
+                    FileOutputStream outputStream = new FileOutputStream(outFile);
+
+                    ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
+
+                    mixtureOfObjects.add(newLogin);
 
                     objectOutStream.writeObject(mixtureOfObjects);
 
@@ -93,10 +204,7 @@ public class LoginPage extends JFrame{
                     for (Object x : mixtureOfObjects) {
                         objectMixture.append(x).append("\n");
                     }
-
-                    JOptionPane.showMessageDialog(null, "Other valid login names from the " +
-                                    "login array-list are:\n\n" + objectMixture,
-                            "Output from login File", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "New login added succesfully");
 
                     inputStream.close();
 
@@ -118,47 +226,6 @@ public class LoginPage extends JFrame{
                     JOptionPane.showMessageDialog(null, "Could not convert the object to"
                             + "the appropriate class!", "Problem Converting Object!", JOptionPane.ERROR_MESSAGE);
                 }
-
-                String loginName = tfName.getText();
-                String pinCode = tfPinCode.getText();
-
-                if (loginName.equals(setLoginName)) {
-                    JOptionPane.showMessageDialog(null, "Correct Login from newly registered Login, Welcome", "Welcome!", 1);
-
-                    //create HomePage (Already set as visible)
-                    new HomePage();
-                    //hide LoginPage
-                    dispose();
-                }
-
-                else if (mixtureOfObjects.contains(loginName)){
-                    JOptionPane.showMessageDialog(null, "Correct Login from Login list file, Welcome", "Welcome!", 1);
-
-                    //create HomePage (Already set as visible)
-                    new HomePage();
-                    //hide LoginPage
-                    dispose();
-                }
-
-                else {
-                    JOptionPane.showMessageDialog(null, "Incorrect Login, Please re-enter correct login details", "Error", 2);
-                    lbInput.setText("You inputted = Name: " + loginName
-                            + " Pin: " + pinCode);
-                }
-            }
-        });
-
-        btnClear.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfName.setText("");
-                tfPinCode.setText("");
-            }});
-
-        btnExit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
             }
         });
     }

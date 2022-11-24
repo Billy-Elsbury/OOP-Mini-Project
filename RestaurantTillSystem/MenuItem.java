@@ -2,16 +2,16 @@ package RestaurantTillSystem;
 
 import java.io.*;
 
-public class FoodItem implements Serializable {
+public class MenuItem implements Serializable {
     private String menuItemName;
     private String description;
     private double price;
 
-    public FoodItem() {
+    public MenuItem() {
         this("Name Unknown", "No Description", 0.0);
     }
 
-    public FoodItem(String menuItemName, String description, double price) {
+    public MenuItem(String menuItemName, String description, double price) {
         setMenuItemName(menuItemName);
         setDescription(description);
         setPrice(price);
