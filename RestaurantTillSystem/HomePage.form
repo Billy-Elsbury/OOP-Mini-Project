@@ -57,6 +57,7 @@
         </constraints>
         <properties>
           <background color="-726785"/>
+          <foreground color="-726785"/>
           <icon value="RestaurantTillSystem/catWave.gif"/>
           <text value=""/>
         </properties>

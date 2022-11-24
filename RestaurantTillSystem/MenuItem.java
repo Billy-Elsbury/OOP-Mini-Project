@@ -43,6 +43,6 @@ public class MenuItem{
     }
     public String toString() {
 
-        return String.format("Food Item ID: " + getMenuItemID() +"\nFood Item Name: " + getMenuItemName() + "\nFood Description: " +getDescription() + "\nPrice: " + getPrice());
+        return String.format("Food Item ID: " + getMenuItemID() + "\nFood Item Name: " + getMenuItemName() + "\nFood Description: " +getDescription() + "\nPrice: " + getPrice());
     }
 }

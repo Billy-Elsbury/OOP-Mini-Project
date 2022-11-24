@@ -27,7 +27,8 @@ public class AdminDatabaseFunctions {
         private static Connection connection = null;
         private  String url = "jdbc:oracle:thin:@studentoracle.students.ittralee.ie:1521:orcl";
         private  String username = "T00224562";
-        private  String password = "tqxyP7*9vgw4";
+        //for security reasons no password
+        private  String password = "enter password";
 
         private String insertSql = "INSERT INTO REVENUEANALYSIS VALUES (2022, 172200, 81200, 'Guiness')";
         private String selectSql = "SELECT * FROM REVENUEANALYSIS";

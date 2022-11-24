@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022">
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Temp commit 24-11-2022">
+      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/Jail.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/Jail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/catWave2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/jailImage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/jailImageSmaller.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +63,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.HomePage">
+  <component name="RunManager" selected="Application.RestaurantTillDriver">
     <configuration name="AdminDatabaseFunctions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.AdminDatabaseFunctions" />
       <module name="OOP Mini-Project" />
@@ -85,6 +90,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Jail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.Jail" />
+      <module name="OOP Mini-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="RestaurantTillSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Jail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.Jail" />
+      <module name="OOP Mini-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="RestaurantTillSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestaurantTillDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.RestaurantTillDriver" />
       <module name="OOP Mini-Project" />
@@ -100,8 +131,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HomePage" />
         <item itemvalue="Application.RestaurantTillDriver" />
+        <item itemvalue="Application.HomePage" />
+        <item itemvalue="Application.Jail" />
+        <item itemvalue="Application.Jail2" />
         <item itemvalue="Application.AdminDatabaseFunctions" />
       </list>
     </recent_temporary>
@@ -127,7 +160,7 @@
       <workItem from="1669218683925" duration="9189000" />
       <workItem from="1669243469924" duration="5768000" />
       <workItem from="1669293301351" duration="156000" />
-      <workItem from="1669294643496" duration="15813000" />
+      <workItem from="1669294643496" duration="25650000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -220,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669253215693</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Temp commit 24-11-2022">
+      <created>1669323457889</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669323457889</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +289,7 @@
     <MESSAGE value="Added Gif onto homepage, introduced login name validation against an array that's saved in a file, 23-11-2022" />
     <MESSAGE value="Started to add simple database functionality, reference Database programming Lab Sheet 9, 23-11-2022" />
     <MESSAGE value="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022" />
+    <MESSAGE value="Temp commit 24-11-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temp commit 24-11-2022" />
   </component>
 </project>

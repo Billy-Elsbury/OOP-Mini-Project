@@ -3,8 +3,12 @@ package RestaurantTillSystem;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class LoginPage extends JFrame{
     JPanel loginPanel;
@@ -27,12 +31,12 @@ public class LoginPage extends JFrame{
          * Site: https://icon-icons.com
          * (Accessed 16 November 2022)
          * *****************************************************/
-        setIconImage(new ImageIcon(this.getClass().getResource("loginIconImage.png")).getImage());
+        setIconImage(new ImageIcon(Objects.requireNonNull(this.getClass().getResource("loginIconImage.png"))).getImage());
 
         setContentPane(loginPanel);
         setTitle("Till Login");
-        setLocationRelativeTo(null);
         setSize(500, 500);
+        setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(false);
@@ -80,11 +84,11 @@ public class LoginPage extends JFrame{
                         }
 
                     } catch (FileNotFoundException fnfe) {
-                        System.out.println(fnfe.getStackTrace());
+                        System.out.println(Arrays.toString(fnfe.getStackTrace()));
                         JOptionPane.showMessageDialog(null, "File could not be found!",
                                 "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
                     } catch (IOException ioe) {
-                        System.out.println(ioe.getStackTrace());
+                        System.out.println(Arrays.toString(ioe.getStackTrace()));
                         JOptionPane.showMessageDialog(null, "File could not be written!",
                                 "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
                     } catch (ClassNotFoundException ex) {
@@ -136,7 +140,7 @@ public class LoginPage extends JFrame{
                 String pinCode = String.valueOf(tfPinCode.getPassword());
 
                 if (loginName.equals(setLoginName)) {
-                    JOptionPane.showMessageDialog(null, "Correct Login from newly registered Login, Welcome", "Welcome!", 1);
+                    JOptionPane.showMessageDialog(null, "Correct Login from newly registered Login, Welcome", "Welcome!", JOptionPane.INFORMATION_MESSAGE);
 
                     //create HomePage (Already set as visible)
                     new HomePage();
@@ -145,7 +149,7 @@ public class LoginPage extends JFrame{
                 }
 
                 else if (mixtureOfObjects.contains(loginName)){
-                    JOptionPane.showMessageDialog(null, "Correct Login from Login list file, Welcome: " + loginName, "Welcome!", 1);
+                    JOptionPane.showMessageDialog(null, "Correct Login from Login list file, Welcome: " + loginName, "Welcome!", JOptionPane.INFORMATION_MESSAGE);
 
                     //create HomePage (Already set as visible)
                     new HomePage();
@@ -154,7 +158,7 @@ public class LoginPage extends JFrame{
                 }
 
                 else {
-                    JOptionPane.showMessageDialog(null, "Incorrect Login, Please re-enter correct login details", "Error", 2);
+                    JOptionPane.showMessageDialog(null, "Incorrect Login, Please re-enter correct login details", "Error", JOptionPane.WARNING_MESSAGE);
                     lbInput.setText("You inputted = Name: " + loginName
                             + " Pin: " + pinCode);
                     JOptionPane.showMessageDialog(null, "All valid login names from the " +
@@ -197,18 +201,18 @@ public class LoginPage extends JFrame{
                     outputStream.close();
 
                 } catch (FileNotFoundException fnfe) {
-                    System.out.println(fnfe.getStackTrace());
+                    System.out.println(Arrays.toString(fnfe.getStackTrace()));
                     JOptionPane.showMessageDialog(null, "File could not be found!",
                             "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
                 } catch (IOException ioe) {
-                    System.out.println(ioe.getStackTrace());
+                    System.out.println(Arrays.toString(ioe.getStackTrace()));
                     JOptionPane.showMessageDialog(null, "File could not be written!",
                             "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
                 }
 
                 File loginFile = new File("loginDetails.txt");
 
-                StringBuilder objectMixture = null;
+                StringBuilder objectMixture;
                 try {
                     FileInputStream inputStream = new FileInputStream(loginFile);
 
@@ -221,7 +225,7 @@ public class LoginPage extends JFrame{
                     for (Object x : mixtureOfObjects) {
                         objectMixture.append(x).append("\n");
                     }
-                    JOptionPane.showMessageDialog(null, "New login added succesfully");
+                    JOptionPane.showMessageDialog(null, "New login added successfully");
 
                     inputStream.close();
 
@@ -243,6 +247,13 @@ public class LoginPage extends JFrame{
                     JOptionPane.showMessageDialog(null, "Could not convert the object to"
                             + "the appropriate class!", "Problem Converting Object!", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        Image.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                JOptionPane.showMessageDialog(null,"Nice try, but that won't log you in...");
             }
         });
     }

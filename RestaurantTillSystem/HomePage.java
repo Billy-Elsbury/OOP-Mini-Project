@@ -7,6 +7,7 @@ package RestaurantTillSystem;
         import java.awt.event.MouseAdapter;
         import java.awt.event.MouseEvent;
         import java.util.*;
+        import java.util.List;
 
 public class HomePage extends JFrame implements ActionListener {
     JPanel homePanel;
@@ -17,19 +18,18 @@ public class HomePage extends JFrame implements ActionListener {
     JMenu menuItems, orders, admin;
     JMenuItem item = null;
 
-    /*****************************************************
+    /****************************************************
      * Gif Incorporation idea borrowed from Luke Foley T00224345
-     *
      * Gif obtained from https://tenor.com/en-GB/view/peach-cat-mochi-mochi-hello-waving-box-gif-15495759
      * (Accessed 23 November 2022)
-     * *****************************************************/
+     ******************************************************/
     private JLabel lblCatWave;
-    private MenuItem menuItem;
+    private ImageIcon catWave2;
     int menuItemID = 1;
 
     MenuItem firstMenuItem = new MenuItem(menuItemID, "Pizza", "Italian",12.50);
 
-    ArrayList<MenuItem> allMenuItems = new ArrayList<>(Arrays.asList(firstMenuItem));
+    ArrayList<MenuItem> allMenuItems = new ArrayList<>(List.of(firstMenuItem));
 
     public HomePage() {
         //Menu bar main parameters
@@ -54,7 +54,7 @@ public class HomePage extends JFrame implements ActionListener {
         /*"try" to set the Icon image and "catch" the exception if image does not exist
         or is not where it is expected to be */
         try {
-            setIconImage(new ImageIcon(this.getClass().getResource("IconImage.png")).getImage());
+            setIconImage(new ImageIcon(Objects.requireNonNull(this.getClass().getResource("IconImage.png"))).getImage());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Icon Image not found or invalid");
         }
@@ -62,8 +62,8 @@ public class HomePage extends JFrame implements ActionListener {
         //Other menu bar parameters
         setContentPane(homePanel);
         setTitle("Home Page");
-        setLocationRelativeTo(null);
         setSize(800, 500);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         HomeImage.addMouseListener(new MouseAdapter() {
@@ -77,11 +77,11 @@ public class HomePage extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                /*****************************************************
+                /****************************************************
                  * Custom JOptionDialog code created referencing:
                  * Site: https://stackoverflow.com/questions/32062761
                  * (Accessed 23 November 2022)
-                 * *****************************************************/
+                 * ****************************************************/
 
                 Object[] buttons = {"Exit", "Cancel", "Return to login page"};
 
@@ -102,6 +102,18 @@ public class HomePage extends JFrame implements ActionListener {
                 }
             }
         });
+
+        lblCatWave.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                JOptionPane.showMessageDialog(null,"You Killed a cat!?!!?");
+                    catWave2 = new ImageIcon("catWave2.gif");
+                    lblCatWave.setIcon(catWave2);
+
+            }
+        });
+
     }
 
     /*****************************************************
@@ -138,8 +150,8 @@ public class HomePage extends JFrame implements ActionListener {
 
         String[] itemNames = {"Add Item", "Edit Item", "Remove Item", "Query Item"};
 
-        for (int i = 0; i < itemNames.length; i++) {
-            item = new JMenuItem(itemNames[i]);
+        for (String itemName : itemNames) {
+            item = new JMenuItem(itemName);
             item.addActionListener(this);
 
             menuItems.addSeparator();
@@ -153,8 +165,8 @@ public class HomePage extends JFrame implements ActionListener {
 
         String[] itemNames = {"Place Order", "Edit Order", "Cancel Order", "Pay Bill", "View Orders"};
 
-        for (int i = 0; i < itemNames.length; i++) {
-            item = new JMenuItem(itemNames[i]);
+        for (String itemName : itemNames) {
+            item = new JMenuItem(itemName);
             item.addActionListener(this);
 
             orders.addSeparator();
@@ -168,8 +180,8 @@ public class HomePage extends JFrame implements ActionListener {
 
         String[] itemNames = {"Item Analysis", "Revenue Analysis"};
 
-        for (int i = 0; i < itemNames.length; i++) {
-            item = new JMenuItem(itemNames[i]);
+        for (String itemName : itemNames) {
+            item = new JMenuItem(itemName);
             item.addActionListener(this);
 
             admin.addSeparator();
@@ -200,7 +212,7 @@ public class HomePage extends JFrame implements ActionListener {
 
             }
                 catch (NumberFormatException numberFormatException) {
-                int input = JOptionPane.showConfirmDialog(null, "Price must be a valid number, Would you like to exit?", "Error!",0);
+                int input = JOptionPane.showConfirmDialog(null, "Price must be a valid number, Would you like to exit?", "Error!", JOptionPane.YES_NO_OPTION);
                 if (input == 0){
                     break;
                 }
@@ -210,20 +222,17 @@ public class HomePage extends JFrame implements ActionListener {
 
     public void queryMenuItem(ArrayList<MenuItem> allMenuItems) {
 
-            String menuItemsString = "";
+            StringBuilder menuItemsString = new StringBuilder();
             MenuItem menuItem;
 
-            Iterator<MenuItem> iterator = allMenuItems.iterator();
+        for (MenuItem allMenuItem : allMenuItems) {
+            menuItem = allMenuItem;
+            if (menuItem != null)
+                menuItemsString.append(menuItem).append("\n\n");
 
-            while(iterator.hasNext())
-            {
-                menuItem = iterator.next();
-                if (menuItem != null)
-                    menuItemsString += menuItem + "\n\n";
+        }
 
-            }
-
-           JOptionPane.showMessageDialog(null, menuItemsString);
+           JOptionPane.showMessageDialog(null, menuItemsString.toString());
 
             menuArea.setText(""+menuItemsString);
         }
@@ -234,17 +243,15 @@ public class HomePage extends JFrame implements ActionListener {
 
             while (!valid) {
 
-                String ordersAsString = "";
+                StringBuilder ordersAsString = new StringBuilder();
                 MenuItem menuItem;
                 String selectedOrderIDasString;
                 int selectedOrderID;
 
-                Iterator<MenuItem> iterator = allMenuItems.iterator();
-
-                while (iterator.hasNext()) {
-                    menuItem = iterator.next();
+                for (MenuItem allMenuItem : allMenuItems) {
+                    menuItem = allMenuItem;
                     if (menuItem != null) {
-                        ordersAsString += menuItem + "\n\n";
+                        ordersAsString.append(menuItem).append("\n\n");
                     }
                 }
                     selectedOrderIDasString = JOptionPane.showInputDialog(null, "Please select which menu item to add to new order: \n\n" + ordersAsString);
@@ -253,19 +260,60 @@ public class HomePage extends JFrame implements ActionListener {
                         selectedOrderID = Integer.parseInt(selectedOrderIDasString);
                         valid = true;
 
-                        //selectedOrderID
-
-                        JOptionPane.showMessageDialog(null,"Order added to order list");
+                        JOptionPane.showMessageDialog(null,"Order "+ selectedOrderID +" added to order list");
                     }
                     catch (NumberFormatException numberFormatException) {
-                        int input = JOptionPane.showConfirmDialog(null, "Order ID must be a ID number, Would you like to exit?", "Error!", 0);
+                        int input = JOptionPane.showConfirmDialog(null, "Order ID must be a ID number, Would you like to exit?", "Error!", JOptionPane.YES_NO_OPTION);
                         if (input == 0) {
                             break;
                         }
                     }
+
             }
         }
 
+    public void dineAndDashMiniGame() {
+
+        boolean valid = false;
+
+        //catch statements not working correctly.
+        while (!valid) {
+            try {
+                int choice = Integer.parseInt(JOptionPane.showInputDialog("So you're a dine and dasher? Let's see if the chances are in your favour \n\n choose a number between 1 and 3 to attempt a dine and dash"));
+
+                //generate random values from 0-3
+                Random random = new Random();
+                int maxValue = 3;
+                int randomNumber = random.nextInt(maxValue) +1;
+
+                JOptionPane.showMessageDialog(null,"Random number is: " + randomNumber + "\nYou chose: " + choice);
+
+                if(choice == randomNumber) {
+                    JOptionPane.showMessageDialog(null, """
+                            CONGRATULATIONS!, You left without paying!
+                            Instead you payed with your self respect
+                            A small price to pay for a free meal?""");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, """
+                            STOP, You got caught attempting to leave without paying,
+                            Perhaps you're not as sneaky as you thought you were?
+
+                            Now you get to pay for your food and spend a night in jail!""");
+                    new Jail();
+                    dispose();
+                }
+                valid = true;
+
+            }
+            catch (NumberFormatException numberFormatException) {
+                int input = JOptionPane.showConfirmDialog(null, "Must be a valid must be a valid number between 1 and 4, Would you like to exit?", "Error!", JOptionPane.YES_NO_OPTION);
+                if (input == 0){
+                    break;
+                }
+            }
+        }
+        }
 
     public void performRevenueAnalysis() {
         AdminDatabaseFunctions performRevenueAnalysis = new AdminDatabaseFunctions();
@@ -300,19 +348,29 @@ public class HomePage extends JFrame implements ActionListener {
         }
 
         else if (e.getActionCommand().equals("Edit Order"))
-            JOptionPane.showMessageDialog(null, "Edit an existing Order",
+            JOptionPane.showMessageDialog(null, "Edit an existing Order function unavailable",
                     "Edit Order", JOptionPane.INFORMATION_MESSAGE);
 
         else if (e.getActionCommand().equals("Cancel Order"))
-            JOptionPane.showMessageDialog(null, "Cancel an existing Order",
+            JOptionPane.showMessageDialog(null, "Cancel Order function unavailable",
                     "Cancel Order", JOptionPane.INFORMATION_MESSAGE);
 
-        else if (e.getActionCommand().equals("Pay Bill"))
-            JOptionPane.showMessageDialog(null, "Pay a bill and close an Order",
-                    "Pay Bill", JOptionPane.INFORMATION_MESSAGE);
+        else if (e.getActionCommand().equals("Pay Bill")) {
+            String[] options = new String[2];
+            options[0] = "Pay Bill";
+            options[1] = "Attempt Dine and Dash";
+            int chosenOption = JOptionPane.showOptionDialog(null, "Pay a bill and close an Order",
+                    "Pay Bill", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, null);
+
+            if(chosenOption == 0)
+                JOptionPane.showMessageDialog(null,"Bill payed successfully, Goodbye!");
+
+            else if(chosenOption == 1)
+                dineAndDashMiniGame();
+        }
 
         else if (e.getActionCommand().equals("View Orders")) {
-            JOptionPane.showMessageDialog(null, "View existing orders",
+            JOptionPane.showMessageDialog(null, "View an existing Order function unavailable",
                     "View Order", JOptionPane.INFORMATION_MESSAGE);
         }
 
