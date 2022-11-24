@@ -34,9 +34,8 @@ public class Orders implements Serializable {
 
     @Override
     public String toString() {
-        return "LoginDetails{" +
-                "orderName='" + getOrderName() + '\'' +
-                ", orderID=" + getOrderID() +
-                '}';
+        return "Order Details: " +
+                "OrderID'" + getOrderID() + '\'' +
+                ", Order Name" + getOrderName();
     }
 }

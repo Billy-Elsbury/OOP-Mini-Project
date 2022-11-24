@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Started to add simple database functionality, reference Database programming Lab Sheet 9, 23-11-2022">
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/FoodItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +46,11 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "123",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "342",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/T00224562/Downloads/ojdbc7.jar",
+    "last_opened_file_path": "C:/Users/billy/Desktop/OldRestaurantSystemExample",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -59,7 +58,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.RestaurantTillDriver">
+  <component name="RunManager" selected="Application.HomePage">
     <configuration name="AdminDatabaseFunctions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.AdminDatabaseFunctions" />
       <module name="OOP Mini-Project" />
@@ -101,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.HomePage" />
+        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.AdminDatabaseFunctions" />
       </list>
     </recent_temporary>
@@ -126,7 +125,9 @@
       <workItem from="1669215716694" duration="2048000" />
       <workItem from="1669217800224" duration="843000" />
       <workItem from="1669218683925" duration="9189000" />
-      <workItem from="1669243469924" duration="5669000" />
+      <workItem from="1669243469924" duration="5768000" />
+      <workItem from="1669293301351" duration="156000" />
+      <workItem from="1669294643496" duration="15813000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -212,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669217742836</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022">
+      <created>1669253215693</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669253215693</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +248,7 @@
     <MESSAGE value="Added FoodItem class to facilitate add menu item and query menu item functions, 23-11-2022" />
     <MESSAGE value="Added Gif onto homepage, introduced login name validation against an array that's saved in a file, 23-11-2022" />
     <MESSAGE value="Started to add simple database functionality, reference Database programming Lab Sheet 9, 23-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to add simple database functionality, reference Database programming Lab Sheet 9, 23-11-2022" />
+    <MESSAGE value="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022" />
   </component>
 </project>

@@ -17,7 +17,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
+//Database functionality not working outside of college
 public class AdminDatabaseFunctions {
 
         public AdminDatabaseFunctions(){

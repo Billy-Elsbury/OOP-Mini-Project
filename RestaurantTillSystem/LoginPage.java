@@ -46,41 +46,58 @@ public class LoginPage extends JFrame{
 
         setVisible(true);
 
+
+        //serialization code altered from Lab Sheet 15
+
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                try {
-                    FileOutputStream outputStream = new FileOutputStream(outFile);
+                    try {
 
-                    ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
+                        File loginFile = new File("loginDetails.txt");
 
-                    mixtureOfObjects.add("BillyElsbury");
-                    mixtureOfObjects.add("JohnBrosnan");
-                    mixtureOfObjects.add("LukeFoley");
-                    mixtureOfObjects.add("DarraghQuinn");
-                    mixtureOfObjects.add(setLoginName);
+                        FileInputStream inputStream = new FileInputStream(loginFile);
 
-                    objectOutStream.writeObject(mixtureOfObjects);
+                        ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
 
-                    outputStream.close();
+                        mixtureOfObjects = (ArrayList<Object>) objectInStream.readObject();
 
-                } catch (FileNotFoundException fnfe) {
-                    System.out.println(fnfe.getStackTrace());
-                    JOptionPane.showMessageDialog(null, "File could not be found!",
-                            "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
-                } catch (IOException ioe) {
-                    System.out.println(ioe.getStackTrace());
-                    JOptionPane.showMessageDialog(null, "File could not be written!",
-                            "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
+
+                        if(!mixtureOfObjects.contains("BillyElsbury")) {
+
+                            FileOutputStream outputStream = new FileOutputStream(outFile);
+                            ObjectOutputStream objectOutStream = new ObjectOutputStream(outputStream);
+
+                            mixtureOfObjects.add("BillyElsbury");
+                            mixtureOfObjects.add("JohnBrosnan");
+                            mixtureOfObjects.add("LukeFoley");
+                            mixtureOfObjects.add("DarraghQuinn");
+
+                            objectOutStream.writeObject(mixtureOfObjects);
+
+                            outputStream.close();
+                        }
+
+                    } catch (FileNotFoundException fnfe) {
+                        System.out.println(fnfe.getStackTrace());
+                        JOptionPane.showMessageDialog(null, "File could not be found!",
+                                "Problem Finding File!", JOptionPane.ERROR_MESSAGE);
+                    } catch (IOException ioe) {
+                        System.out.println(ioe.getStackTrace());
+                        JOptionPane.showMessageDialog(null, "File could not be written!",
+                                "Problem Writing to File!", JOptionPane.ERROR_MESSAGE);
+                    } catch (ClassNotFoundException ex) {
+                        throw new RuntimeException(ex);
+
                 }
 
                 //serialization code altered from Lab Sheet 15
 
-                File loginFile = new File("loginDetails.txt");
-
                 StringBuilder objectMixture = null;
                 try {
+                    File loginFile = new File("loginDetails.txt");
+
                     FileInputStream inputStream = new FileInputStream(loginFile);
 
                     ObjectInputStream objectInStream = new ObjectInputStream(inputStream);
