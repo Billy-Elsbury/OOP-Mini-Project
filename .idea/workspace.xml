@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Temp commit 24-11-2022">
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/Jail.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/Jail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/catWave2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/jailImage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestaurantTillSystem/jailImageSmaller.jpg" afterDir="false" />
+    <list default="true" id="3471ef90-c6b4-40fc-b1ef-9f75429c87fb" name="Changes" comment="Added mini-game in Pay Bill menu option,&#10; used intelliJ to clean up some warnings,&#10; &#10; 24-11-2022">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/AdminDatabaseFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantTillSystem/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginDetails.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loginDetails.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +58,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.RestaurantTillDriver">
+  <component name="RunManager" selected="Application.HomePage">
     <configuration name="AdminDatabaseFunctions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RestaurantTillSystem.AdminDatabaseFunctions" />
       <module name="OOP Mini-Project" />
@@ -131,8 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.HomePage" />
+        <item itemvalue="Application.RestaurantTillDriver" />
         <item itemvalue="Application.Jail" />
         <item itemvalue="Application.Jail2" />
         <item itemvalue="Application.AdminDatabaseFunctions" />
@@ -160,7 +155,7 @@
       <workItem from="1669218683925" duration="9189000" />
       <workItem from="1669243469924" duration="5768000" />
       <workItem from="1669293301351" duration="156000" />
-      <workItem from="1669294643496" duration="25650000" />
+      <workItem from="1669294643496" duration="30587000" />
     </task>
     <task id="LOCAL-00001" summary="First commit of empty Mini-Project file, 04-11-2022">
       <created>1667597201106</created>
@@ -260,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669323457889</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added mini-game in Pay Bill menu option,&#10; used intelliJ to clean up some warnings,&#10; &#10; 24-11-2022">
+      <created>1669333330178</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669333330178</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +292,7 @@
     <MESSAGE value="Started to add simple database functionality, reference Database programming Lab Sheet 9, 23-11-2022" />
     <MESSAGE value="Errors with database functions outside college hours, Added 'add user' functionality that introduced new errors with array list duplication, 24-11-2022" />
     <MESSAGE value="Temp commit 24-11-2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temp commit 24-11-2022" />
+    <MESSAGE value="Added mini-game in Pay Bill menu option,&#10; used intelliJ to clean up some warnings,&#10; &#10; 24-11-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mini-game in Pay Bill menu option,&#10; used intelliJ to clean up some warnings,&#10; &#10; 24-11-2022" />
   </component>
 </project>

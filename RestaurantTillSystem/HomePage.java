@@ -18,14 +18,14 @@ public class HomePage extends JFrame implements ActionListener {
     JMenu menuItems, orders, admin;
     JMenuItem item = null;
 
-    /****************************************************
+    /**
      * Gif Incorporation idea borrowed from Luke Foley T00224345
      * Gif obtained from https://tenor.com/en-GB/view/peach-cat-mochi-mochi-hello-waving-box-gif-15495759
      * (Accessed 23 November 2022)
-     ******************************************************/
+     * */
     private JLabel lblCatWave;
     private ImageIcon catWave2;
-    int menuItemID = 1;
+    int menuItemID;
 
     MenuItem firstMenuItem = new MenuItem(menuItemID, "Pizza", "Italian",12.50);
 
@@ -46,12 +46,13 @@ public class HomePage extends JFrame implements ActionListener {
         menuArea.setSize(100, 50);
         menuArea.setText("");
 
-        /*****************************************************
+        /**
          * Icon image obtained from
          * Site: https://icon-icons.com
          * (Accessed 16 November 2022)
-         * *****************************************************/
-        /*"try" to set the Icon image and "catch" the exception if image does not exist
+         * */
+
+         /*"try" to set the Icon image and "catch" the exception if image does not exist
         or is not where it is expected to be */
         try {
             setIconImage(new ImageIcon(Objects.requireNonNull(this.getClass().getResource("IconImage.png"))).getImage());
@@ -77,11 +78,11 @@ public class HomePage extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                /****************************************************
+                /**
                  * Custom JOptionDialog code created referencing:
                  * Site: https://stackoverflow.com/questions/32062761
                  * (Accessed 23 November 2022)
-                 * ****************************************************/
+                 * */
 
                 Object[] buttons = {"Exit", "Cancel", "Return to login page"};
 
@@ -116,12 +117,13 @@ public class HomePage extends JFrame implements ActionListener {
 
     }
 
-    /*****************************************************
+    /**
      * Clock code taken entirely from RestaurantSystem.jar in LECTURER JohnBrosnan\ObjectOrientatedProgramming\MiniProjectStuff\SomeOldYear2MiniProjects
      * and only edited a minor amount to work with this system.
      * https://ittralee-my.sharepoint.com/:u:/r/personal/lt00036791_365s_ittralee_ie/Documents/Object%20Oriented%20Programming/MiniProjectStuff/SomeOldYear2MiniProjects/RestaurantSystem.jar?csf=1&web=1&e=VprIHW
      * (Accessed 22 November 2022)
-     * *****************************************************/
+     * */
+
     public void Clock() {
         Thread clock = new Thread(() -> {
             try {
