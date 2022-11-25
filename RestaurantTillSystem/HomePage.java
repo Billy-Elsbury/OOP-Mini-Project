@@ -191,9 +191,6 @@ public class HomePage extends JFrame implements ActionListener {
         }
     }
 
-    //Only used to run the HomePage on its own
-    public static void main(String[] args) {new HomePage();}
-
     public void addMenuItem() {
 
         boolean valid = false;
